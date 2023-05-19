@@ -286,15 +286,15 @@ class MyPlot extends PluginBase
 			$difX = intval($x) % $totalSize;
 			$x = (int) floor($x / $totalSize);
 		}else{
-			$difX = abs(($x - $plotSize + 1) % $totalSize);
-			$x = (int) ceil(($x - $plotSize + 1) / $totalSize);
+			$difX = abs((intval($x) - $plotSize + 1) % $totalSize);
+			$x = (int) ceil((intval($x) - $plotSize + 1) / $totalSize);
 		}
 		if($z >= 0) {
 			$difZ = intval($z) % $totalSize;
-			$z = (int) floor($z / $totalSize);
+			$z = (int) floor(intval($z) / $totalSize);
 		}else{
-			$difZ = abs(($z - $plotSize + 1) % $totalSize);
-			$z = (int) ceil(($z - $plotSize + 1) / $totalSize);
+			$difZ = abs((intval($z) - $plotSize + 1) % $totalSize);
+			$z = (int) ceil((intval($z) - $plotSize + 1) / $totalSize);
 		}
 		if(($difX > $plotSize - 1) or ($difZ > $plotSize - 1))
 			return null;
