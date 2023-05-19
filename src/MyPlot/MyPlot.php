@@ -237,8 +237,8 @@ class MyPlot extends PluginBase
 	 * @return Plot|null
 	 */
 	public function getPlotByPosition(Position $position) : ?Plot {
-		$x = $position->x;
-		$z = $position->z;
+		$x = floatval($position->x);
+		$z = floatval($position->z);
 		$levelName = $position->getWorld()->getFolderName();
 		if(!$this->isLevelLoaded($levelName))
 			return null;
