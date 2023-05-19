@@ -283,14 +283,14 @@ class MyPlot extends PluginBase
 		$roadWidth = $plotLevel->roadWidth;
 		$totalSize = $plotSize + $roadWidth;
 		if($x >= 0) {
-			$difX = $x % $totalSize;
+			$difX = intval($x) % $totalSize;
 			$x = (int) floor($x / $totalSize);
 		}else{
 			$difX = abs(($x - $plotSize + 1) % $totalSize);
 			$x = (int) ceil(($x - $plotSize + 1) / $totalSize);
 		}
 		if($z >= 0) {
-			$difZ = $z % $totalSize;
+			$difZ = intval($z) % $totalSize;
 			$z = (int) floor($z / $totalSize);
 		}else{
 			$difZ = abs(($z - $plotSize + 1) % $totalSize);
